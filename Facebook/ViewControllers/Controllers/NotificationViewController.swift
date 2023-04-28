@@ -16,16 +16,17 @@ class NotificationViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     
-    var arrNotificationImage: [String] = ["r1","r2","r3","r4","r5","r6","r7","r8"]
+   
     
-    var arrNotifications: [String] = ["You have a new friend suggestion: Vadi Prince","Ujas Anghan accepted your friend request","sujan bhayani accepted your friend request","You have a new friend suggestion: Rakshil Dudhat","Kaushik Savaliya accepted your friend request","Akshay sojitra accepted your friend request","Bhargav Domadiya accepted your friend request","Jonathan Deff accepted your friend request"]
-    
+    var viewModel: NotificationTableViewCell = NotificationTableViewCell()
    
     // MARK: - Life Cycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCatagoryTableView()
+        navigationController?.isNavigationBarHidden = true
+        
 //        loadWebView()
         
 //        if tabBarController?.tabBar.tag == 0 {
@@ -75,19 +76,17 @@ extension NotificationViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrNotifications.count
-        return arrNotificationImage.count
-    }
+return 1    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: NotificationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCell") as! NotificationTableViewCell
-        cell.arrNotifications.count
-        cell.arrNotificationImage.count
+        cell.arrNotifications[indexPath.row]
+        cell.arrNotificationImage[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 600
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

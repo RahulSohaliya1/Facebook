@@ -15,10 +15,21 @@ class NotificationTableViewCell: UITableViewCell {
     
     var arrNotifications: [String] = ["You have a new friend suggestion: Vadi Prince","Ujas Anghan accepted your friend request","sujan bhayani accepted your friend request","You have a new friend suggestion: Rakshil Dudhat","Kaushik Savaliya accepted your friend request","Akshay sojitra accepted your friend request","Bhargav Domadiya accepted your friend request","Jonathan Deff accepted your friend request"]
     
+    var notificationView: NotificationsCollectionViewCell = NotificationsCollectionViewCell()
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        configureCatagoryCollectionView()
+    }
+    
+    private func configureCatagoryCollectionView() {
         
+        
+        let nibFile: UINib = UINib(nibName: "NotificationsCollectionViewCell", bundle: nil)
+        notificationCollectionView.register(nibFile, forCellWithReuseIdentifier: "NotificationsCollectionViewCell")
+        notificationCollectionView.dataSource = self
+        notificationCollectionView.delegate = self
+        notificationCollectionView.reloadData()
     }
 }
 
@@ -27,7 +38,7 @@ class NotificationTableViewCell: UITableViewCell {
 extension NotificationTableViewCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 587, height: 147)
+        return CGSize(width: 393, height: 120)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -59,6 +70,7 @@ extension NotificationTableViewCell: UICollectionViewDelegate, UICollectionViewD
         cell.notificationImageView.image = UIImage(named: arrNotificationImage[indexPath.row])
         return cell
     }
+    
 }
 
 

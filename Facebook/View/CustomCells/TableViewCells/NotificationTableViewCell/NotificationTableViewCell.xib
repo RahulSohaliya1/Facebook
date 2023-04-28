@@ -52,10 +52,6 @@
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="LoI-3B-A1f">
                         <rect key="frame" x="8" y="94" width="583" height="90"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="583" id="M3K-1n-dx3"/>
-                            <constraint firstAttribute="height" constant="90" id="ZD0-ew-Swb"/>
-                        </constraints>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SYE-3H-Gu8">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -65,14 +61,16 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="LoI-3B-A1f" firstAttribute="top" secondItem="f8F-hS-B5K" secondAttribute="bottom" constant="8" id="83Y-bS-dIk"/>
+                    <constraint firstAttribute="trailing" secondItem="LoI-3B-A1f" secondAttribute="trailing" constant="8" id="8q1-q4-PL6"/>
                     <constraint firstItem="f8F-hS-B5K" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="8sK-Sr-dnb"/>
+                    <constraint firstItem="LoI-3B-A1f" firstAttribute="top" secondItem="f8F-hS-B5K" secondAttribute="bottom" constant="8" id="Dmd-nk-5yU"/>
+                    <constraint firstItem="LoI-3B-A1f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Ea9-kt-Zem"/>
                     <constraint firstItem="fHv-zt-peR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Jsq-I9-nfc"/>
                     <constraint firstItem="fHv-zt-peR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Jtl-a8-lMO"/>
                     <constraint firstItem="f8F-hS-B5K" firstAttribute="top" secondItem="fHv-zt-peR" secondAttribute="bottom" constant="8" id="K2R-5r-uOP"/>
                     <constraint firstItem="KyP-bP-V6Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="bbc-Gb-bD7"/>
-                    <constraint firstItem="LoI-3B-A1f" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="hlz-fr-evd"/>
                     <constraint firstAttribute="trailing" secondItem="KyP-bP-V6Q" secondAttribute="trailing" constant="8" id="qoi-ne-RDb"/>
+                    <constraint firstAttribute="bottom" secondItem="LoI-3B-A1f" secondAttribute="bottom" constant="18" id="u7W-XH-noa"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
